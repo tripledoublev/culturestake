@@ -76,7 +76,6 @@ app.use(bodyParser.json());
 // Configure CORS
 const { hostname } = new URL(process.env.BASE_PATH);
 const { hostname: hostnameBarcode } = new URL(process.env.BARCODE_URL);
-console.log(hostname, hostnameBarcode);
 app.use(
   cors({
     origin: [
