@@ -76,10 +76,14 @@ app.use(bodyParser.json());
 // Configure CORS
 const { hostname } = new URL(process.env.BASE_PATH);
 const { hostname: hostnameBarcode } = new URL(process.env.BARCODE_URL);
-
+console.log(hostname, hostnameBarcode);
 app.use(
   cors({
-    origin: [hostname, new RegExp(`.${hostname}`, 'i')],
+    origin: [
+      hostname,
+      new RegExp(`.${hostname}`, 'i'),
+      "https://quadratic-voting-prototype-ten.vercel.app", // Testing the frontend Vercel URL here
+    ],
     allowedHeaders: [
       'Authorization',
       'Content-Length',
