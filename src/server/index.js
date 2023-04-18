@@ -82,6 +82,7 @@ app.use(
       hostname,
       new RegExp(`.${hostname}`, 'i'),
       "https://quadratic-voting-prototype-ten.vercel.app", // Testing the frontend Vercel URL here
+      "https://0c03-2604-a880-cad-d0-00-f0d-e001.ngrok-free.app",
     ],
     allowedHeaders: [
       'Authorization',
