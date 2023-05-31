@@ -71,7 +71,7 @@ export default async function resolveChainIdsMiddleware(req, res, next) {
     logger.verbose(error);
 
     if (process.env.NODE_ENV === 'production') {
-      next(new APIError(httpStatus.UNPROCESSABLE_ENTITY));
+      next(new APIError(httpStatus.UNPROCESSABLE_ENTITY, error.message));
     } else {
       next(new APIError(httpStatus.UNPROCESSABLE_ENTITY, error.message));
     }
